@@ -1,5 +1,5 @@
 package duke.choice;
 
-class Customer {
-
+public class Customer {
+	String name;
 }
