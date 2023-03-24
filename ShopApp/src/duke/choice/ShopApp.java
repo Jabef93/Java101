@@ -20,9 +20,14 @@ class ShopApp {
 		System.out.println("Item1, "+item1.description+", "+item1.price+", "+item1.size);
 		System.out.println("Item2, "+item2.description+", "+item2.price+", "+item2.size);
 		
+		Clothing[] items = {item1, item2};
+		
 		double total;
 		total = (item2.price * 2 + item1.price)*(1+tax);
 		System.out.println("Tatal: "+total);
+		
+		total = (items[1].price * 2 + items[0].price)*(1+tax);
+		System.out.println("Tatal (con arrays): "+total);
 		
 		
 		c1.size = "S";
