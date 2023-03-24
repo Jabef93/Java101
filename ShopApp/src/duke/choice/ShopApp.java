@@ -3,7 +3,7 @@ package duke.choice;
 class ShopApp {
 
 	public static void main(String[] args) {
-		final double tax = 0.2;
+		final double TAX = 0.2;
 		
 		System.out.println("Bienvenido a Duke Choice App");
 		
@@ -17,17 +17,24 @@ class ShopApp {
 		item1.description = "Blue Jacket"; item1.price = 20.9; item1.size = "M";
 		item2.description = "Orange T-Shirt"; item2.price = 10.5; item2.size = "S";
 		
-		System.out.println("Item1, "+item1.description+", "+item1.price+", "+item1.size);
-		System.out.println("Item2, "+item2.description+", "+item2.price+", "+item2.size);
+//		System.out.println("Item1, "+item1.description+", "+item1.price+", "+item1.size);
+//		System.out.println("Item2, "+item2.description+", "+item2.price+", "+item2.size);
 		
 		Clothing[] items = {item1, item2};
 		
-		double total;
-		total = (item2.price * 2 + item1.price)*(1+tax);
-		System.out.println("Tatal: "+total);
+		double total = 0;
+//		total = (item2.price * 2 + item1.price)*(1+tax);
+//		System.out.println("Total: "+total);
+//		
+//		total = (items[1].price * 2 + items[0].price)*(1+tax);
+//		System.out.println("Total (con arrays): "+total);
 		
-		total = (items[1].price * 2 + items[0].price)*(1+tax);
-		System.out.println("Tatal (con arrays): "+total);
+		for (Clothing clothing : items) {
+			System.out.println("clothing, "+clothing.description+", "+clothing.price+", "+clothing.size);
+			total += clothing.price;
+		}
+		total = total * (1 + TAX);
+		System.out.println("Total clothing price: "+ total);
 		
 		
 		c1.size = "S";
